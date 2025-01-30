@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laba 9", "Laba 9\Laba 9.csproj", "{BD465084-7E68-4C7C-8006-537633E8E47A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionTest", "FunctionTest\FunctionTest.csproj", "{FE6C0C71-A071-4EFE-A932-897ECAC92AF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BD465084-7E68-4C7C-8006-537633E8E47A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD465084-7E68-4C7C-8006-537633E8E47A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD465084-7E68-4C7C-8006-537633E8E47A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6C0C71-A071-4EFE-A932-897ECAC92AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6C0C71-A071-4EFE-A932-897ECAC92AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6C0C71-A071-4EFE-A932-897ECAC92AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6C0C71-A071-4EFE-A932-897ECAC92AF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

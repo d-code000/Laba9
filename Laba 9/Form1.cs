@@ -13,27 +13,44 @@ public partial class Form1 : Form
         _chart.Parent = this;
         _chart.ChartAreas.Add(new ChartArea("Main"));
         
-        // init default value
-        xMinTextBox.Text = "0.12";
-        xMaxTextBox.Text = "0.64";
+        _chart.Series.Add("Function1");
+        _chart.Series.Add("Function2");
+        _chart.Series["Function1"].ChartType = SeriesChartType.Line;
+        _chart.Series["Function2"].ChartType = SeriesChartType.Line;
         
-        stepTextBox.Text = "0.2";
+        // init default value
+        xMinTextBox.Text = "0";
+        xMaxTextBox.Text = "10";
+        stepTextBox.Text = "0.01";
         
     }
 
     private void resultButton_Click(object sender, EventArgs e)
     {
-        throw new System.NotImplementedException();
-    }
+        try
+        {
+            double xMin = double.Parse(xMinTextBox.Text);
+            double xMax = double.Parse(xMaxTextBox.Text);
+            double step = double.Parse(stepTextBox.Text);
 
-    private double Func(double x)
-    {
-        return 
-            Math.Pow
-            (
-            Math.Log(Math.Sin(Math.Pow(x, 3) + 0.0025)), 
-            3.0 / 2
-            ) + 
-            0.8 * Math.Pow(10, -3);
+            if (step <= 0 || xMin >= xMax)
+            {
+                MessageBox.Show("Некорректные значения");
+                return;
+            }
+
+            _chart.Series["Function1"].Points.Clear();
+            _chart.Series["Function2"].Points.Clear();
+
+            for (double x = xMin; x <= xMax; x += step)
+            {
+                _chart.Series["Function1"].Points.AddXY(x, Math.Sin(x));
+                _chart.Series["Function2"].Points.AddXY(x, Math.Cos(x));
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Ошибка: " + ex.Message);
+        }
     }
 }
